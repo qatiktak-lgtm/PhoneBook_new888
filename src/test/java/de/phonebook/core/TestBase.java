@@ -21,27 +21,27 @@ public class TestBase {
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
     @BeforeSuite
-    public void setUp(){
+    public void setUp() {
         app.init();
     }
 
 
     @AfterSuite(enabled = true)
-    public void tearDown(){
+    public void tearDown() {
         app.stop();
     }
 
 
     @BeforeMethod
-    public void startTest(Method method,Object[] p){
-        logger.info("Start test {} with data: {}",method.getName(), Arrays.asList(p));
+    public void startTest(Method method, Object[] p) {
+        logger.info("Start test {} with data: {}", method.getName(), Arrays.asList(p));
     }
 
     @AfterMethod
-    public void stopTest(ITestResult result){
-        if (result.isSuccess()){
-            logger.info("PASSED: {}",result.getMethod().getMethodName());
-        }else {
+    public void stopTest(ITestResult result) {
+        if (result.isSuccess()) {
+            logger.info("PASSED: {}", result.getMethod().getMethodName());
+        } else {
             logger.error("FAILED: {}. Screenshot - > {}",
                     result.getMethod().getMethodName(),
                     app.getUser().takeScreenshot());
