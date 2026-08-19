@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
           </set>
         </option>
+        <option name="myGradleHome" value="C:\Tools\gradle-9.6.0" />
       </GradleProjectSettings>
     </option>
   </component>
